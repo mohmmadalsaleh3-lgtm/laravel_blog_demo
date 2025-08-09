@@ -15,10 +15,10 @@ return new class extends Migration
         $table->unsignedBigInteger('post_id');
         $table->unsignedBigInteger('category_id');
 
-        // المفتاح الأساسي المركب
+        
         $table->primary(['post_id', 'category_id']);
 
-        // العلاقات
+        
         $table->foreign('post_id')
               ->references('post_id')
               ->on('posts')
