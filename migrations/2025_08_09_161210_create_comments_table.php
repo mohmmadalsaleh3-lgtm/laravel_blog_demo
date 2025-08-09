@@ -15,19 +15,19 @@ return new class extends Migration
         $table->id('comment_id'); // يعادل INT AUTO_INCREMENT PRIMARY KEY
         $table->text('content');
         
-        // علاقات المستخدم والمقال
+        
         $table->unsignedBigInteger('user_id')->nullable();
         $table->unsignedBigInteger('post_id');
 
         $table->timestamp('created_at')->useCurrent();
 
-        // المفتاح الأجنبي للمستخدم
+        
         $table->foreign('user_id')
-              ->references('id') // أو 'user_id' إذا كان هذا هو المفتاح الأساسي في جدول users
+              ->references('id') 
               ->on('users')
               ->onDelete('set null');
 
-        // المفتاح الأجنبي للمقال
+        
         $table->foreign('post_id')
               ->references('post_id')
               ->on('posts')
