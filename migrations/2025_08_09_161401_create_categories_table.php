@@ -12,10 +12,10 @@ return new class extends Migration
    public function up()
 {
     Schema::create('categories', function (Blueprint $table) {
-        $table->id('category_id'); // يعادل INT AUTO_INCREMENT PRIMARY KEY
+        $table->id('category_id'); 
         $table->string('name', 50)->unique();
         $table->text('description')->nullable();
-        $table->timestamps(); // يضيف created_at و updated_at تلقائيًا
+        $table->timestamps(); 
     });
 }
 
